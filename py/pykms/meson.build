@@ -5,8 +5,8 @@ if py3_dep.found() == false
     subdir_done()
 endif
 
-pybind11_proj = subproject('pybind11')
-pybind11_dep = pybind11_proj.get_variable('pybind11_dep')
+
+pybind11_dep = dependency('pybind11', required : get_option('pykms'))
 
 if pybind11_dep.found() == false
     pybindings_enabled = false
